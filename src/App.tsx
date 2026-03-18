@@ -3,10 +3,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 
+import { LoadingProvider } from "./context/LoadingProvider";
+
 const CharacterModel = lazy(() => import("./components/Character"));
 const MainContainer = lazy(() => import("./components/MainContainer"));
 const MyWorks = lazy(() => import("./pages/MyWorks"));
-import { LoadingProvider } from "./context/LoadingProvider";
 
 const App = () => {
   return (
@@ -34,13 +35,9 @@ const App = () => {
             </Suspense>
           }
         />
-        <Route
-          path="*"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-             <Navigate to="/" replace />
-            </Suspense>
-          }
+        <Route 
+          path="*" 
+          element={<Navigate to="/" replace />} 
         />
       </Routes>
       <Analytics />
