@@ -199,7 +199,7 @@ const Contact = () => {
           <input value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="contact-input" type="email" placeholder="Email" />
           <input value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })} className="contact-input" type="text" placeholder="Subject" />
           <textarea value={formData.text} onChange={(e) => setFormData({ ...formData, text: e.target.value })} className="contact-input" placeholder="Message"></textarea>
-          <button className="contact-button" type="submit">Send</button>
+          <button className="contact-button" type="submit">Send →</button>
         </form>
       </div>
     </div>
