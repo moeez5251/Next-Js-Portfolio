@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import Lenis from "lenis";
 import "./styles/Navbar.css";
 import { config } from "../config";
-
+import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 export let lenis: Lenis | null = null;
 
@@ -67,9 +67,9 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="/" className="navbar-title" data-cursor="disable">
+        <Link to="/" className="navbar-title" data-cursor="disable">
           <img style={{ width: "50px" }} src="/images/logo.webp" alt="" />
-        </a>
+        </Link>
         <a
           href={`mailto:${config.social.email}`}
           className="navbar-connect"

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
 import MarqueeImport from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 const Marquee = (MarqueeImport as any).default || MarqueeImport;
 const Loading = ({ percent }: { percent: number }) => {
@@ -45,9 +46,9 @@ const Loading = ({ percent }: { percent: number }) => {
   return (
     <>
       <div className="loading-header">
-        <a href="/" className="loader-title" data-cursor="disable">
+        <Link to="/" className="loader-title" data-cursor="disable">
           <img style={{ filter: "invert(1)", width: "60px" }} src="/images/logo.webp" alt="" />
-        </a>
+        </Link>
         <div className={`loaderGame ${clicked && "loader-out"}`}>
           <div className="loaderGame-container">
             <div className="loaderGame-in">
