@@ -90,59 +90,59 @@ export const config = {
         },
         {
             id: 2,
-            title: "VoteChain",
-            category: "Blockchain",
-            technologies: "Solidity, Web3.js, React, Ethereum, IPFS, MetaMask, Node.js",
-            image: "/images/votechain.png",
-            description: "A decentralized election system built on blockchain technology ensuring transparent, tamper-proof, and verifiable voting. Features smart contracts for vote integrity and real-time result tracking."
+            title: "XLMS Client Dashboard",
+            category: "Full Stack",
+            technologies: "React, Node.js, MS SQL Server, Express, TailwindCSS",
+            image: "/images/XLMS-Client.webp",
+            description: "A web-based dashboard for clients to manage their library resources, users, and transactions. Provides a user-friendly interface for managing library resources and users. Built using Next.js, Express.js, and MS SQL."
         },
         {
             id: 3,
-            title: "EIE - Earthquake Impact Estimator",
-            category: "IoT / Hardware",
-            technologies: "Arduino, C++, IoT Sensors, Python, ML, React",
-            image: "/images/eie.png",
-            description: "A practical circuit-based IoT system utilizing Arduino to predict earthquakes before they strike. Integrates hardware sensors for real-time seismic detection and impact estimation."
+            title: "XFMS - File Management System",
+            category: "Full Stack",
+            technologies: "React, Appwrite, TailwindCSS",
+            image: "/images/XFMS.webp",
+            description: "A web-based dashboard for managing files with features like upload, categorization, and access control. Provides secure storage and easy retrieval of documents. Built using React, Next.js, and Appwrite."
         },
         {
             id: 4,
-            title: "GameKroy",
+            title: "Real Time Multiplayer Snake Game",
             category: "Full Stack",
-            technologies: "React, Node.js, MongoDB, Express, Stripe, TailwindCSS",
-            image: "/images/gamekroy.png",
-            description: "A full-featured e-commerce platform for gaming products. Includes user authentication, product catalog, shopping cart, secure payments, order tracking, and admin dashboard."
+            technologies: "React, Node.js, MongoDB, Express, Socket.io, TailwindCSS",
+            image: "/images/Snake.webp",
+            description: "A web-based multiplayer snake game where players compete in real-time. Features real-time updates, leaderboards, and responsive controls. Built using React, Express.js, and Socket.io."
         },
         {
             id: 5,
-            title: "RedxChess",
-            category: "AI / Game Engine",
-            technologies: "Python, C++, Neural Networks, Bitboards, UCI Protocol",
-            image: "/images/redxchess.png",
-            description: "A high-performance chess engine rated 3640 ELO. Features advanced search algorithms, neural network evaluation, and optimized bitboard representation for lightning-fast move generation."
+            title: "URL Shortener",
+            category: "Full Stack",
+            technologies: "React, Next.js, Appwrite, TailwindCSS",
+            image: "/images/URL.webp",
+            description: "A web-based tool for shortening long URLs, providing a user-friendly interface for URL management. Users can input long URLs and receive short, easy-to-remember links. Built using React, Next.js, and Appwrite."
         },
         {
             id: 6,
-            title: "Floodhub",
-            category: "AI / ML",
-            technologies: "Python, TensorFlow, Pandas, React, FastAPI, GIS",
-            image: "/images/floodhub.png",
-            description: "A flood prediction model specifically designed for Bangladesh's river systems. Analyzes weather patterns, water levels, and historical data to provide accurate flood forecasts and alerts."
+            title: "Spotify Clone",
+            category: "Full Stack",
+            technologies: "React, Node.js",
+            image: "/images/Spotify.webp",
+            description: "A web-based music streaming platform with features like song playback, playlist management, and user authentication. Provides a seamless music listening experience with a modern user interface. Built using React."
         },
         {
             id: 7,
-            title: "Phoenix",
+            title: "AI Chat App",
             category: "AI Assistant",
-            technologies: "Python, Speech Recognition, PyAutoGUI, OpenAI API, Tkinter",
-            image: "/images/phoenix.png",
-            description: "A JARVIS-inspired personal AI desktop assistant. Controls system functions, manages tasks, answers queries, automates workflows, and provides voice-activated computing experience."
+            technologies: "React, Gemini API, TailwindCSS",
+            image: "/images/AI.webp",
+            description: "A web-based chatbot powered by the Gemini API, allowing users to interact with an AI in real-time. Built with a responsive interface using React, delivering smart and dynamic conversational experiences."
         },
         {
             id: 8,
-            title: "HekTools",
-            category: "Security / Android",
-            technologies: "Kotlin, Android SDK, Firebase, Python, Encryption",
-            image: "/images/hektools.png",
-            description: "An advanced Android monitoring and security research tool. Features remote device management, activity logging, and encrypted data transmission for security testing purposes."
+            title: "Password Manager",
+            category: "Web App",
+            technologies: "React, Appwrite, TailwindCSS",
+            image: "/images/Password.webp",
+            description: "A web-based password manager that allows users to securely store and manage their passwords. Features include password generation, password storage, and password management. Built using React, Appwrite, and TailwindCSS."
         }
     ],
     contact: {

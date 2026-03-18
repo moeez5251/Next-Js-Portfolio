@@ -11,6 +11,7 @@ import Work from "./Work";
 import TechStackNew from "./TechStackNew";
 import CallToAction from "./CallToAction";
 import setSplitText from "./utils/splitText";
+import { Toaster } from "react-hot-toast";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
   const [isDesktopView, setIsDesktopView] = useState<boolean>(
@@ -32,6 +33,10 @@ const MainContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="container-main">
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+      />
       <Cursor />
       <Navbar />
       <SocialIcons />
