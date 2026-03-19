@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import Lenis from "lenis";
 import "./styles/Navbar.css";
 import { config } from "../config";
-import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 export let lenis: Lenis | null = null;
 
@@ -21,6 +20,7 @@ const Navbar = () => {
       wheelMultiplier: 1.7,
       touchMultiplier: 2,
       infinite: false,
+      autoRaf:true
     });
 
     // Start paused
@@ -64,12 +64,20 @@ const Navbar = () => {
       lenis?.destroy();
     };
   }, []);
+  const handlelogoclick = () => {
+    if (window.innerWidth > 1024) {
+      lenis?.scrollTo(0, {
+        offset: 0,
+        duration: 1.5,
+      });
+    }
+  };
   return (
     <>
       <div className="header">
-        <Link to="/" className="navbar-title" data-cursor="disable">
+        <div style={{ cursor: "pointer" }} onClick={handlelogoclick} className="navbar-title" data-cursor="disable">
           <img style={{ width: "50px" }} src="/images/logo.webp" alt="" />
-        </Link>
+        </div>
         <a
           href={`mailto:${config.social.email}`}
           className="navbar-connect"
