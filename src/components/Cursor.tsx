@@ -14,10 +14,11 @@ const Cursor = () => {
       mousePos.y = e.clientY;
     });
     requestAnimationFrame(function loop() {
+      const delay = 6;
+      cursorPos.x += (mousePos.x - cursorPos.x) / delay;
+      cursorPos.y += (mousePos.y - cursorPos.y) / delay;
+      
       if (!hover) {
-        const delay = 6;
-        cursorPos.x += (mousePos.x - cursorPos.x) / delay;
-        cursorPos.y += (mousePos.y - cursorPos.y) / delay;
         gsap.to(cursor, { x: cursorPos.x, y: cursorPos.y, duration: 0.1 });
         // cursor.style.transform = `translate(${cursorPos.x}px, ${cursorPos.y}px)`;
       }
@@ -25,23 +26,39 @@ const Cursor = () => {
     });
     document.querySelectorAll("[data-cursor]").forEach((item) => {
       const element = item as HTMLElement;
-      element.addEventListener("mouseover", (e: MouseEvent) => {
+      element.addEventListener("mouseenter", (e: MouseEvent) => {
         const target = e.currentTarget as HTMLElement;
         const rect = target.getBoundingClientRect();
 
         if (element.dataset.cursor === "icons") {
-          cursor.classList.add("cursor-icons");
+          if (!hover) {
+            cursor.classList.remove("cursor-icons");
+            
+            const deepTarget = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement;
+            const icon = deepTarget?.closest("span");
+            
+            if (icon && target.contains(icon)) {
+              const iconRect = icon.getBoundingClientRect();
+              gsap.set(cursor, { x: rect.left, y: iconRect.top });
+              cursor.style.setProperty("--cursorH", `${iconRect.height}px`);
+            } else {
+              gsap.set(cursor, { x: rect.left, y: e.clientY - 25 });
+              cursor.style.setProperty("--cursorH", `50px`);
+            }
+            
+            // Force reflow to ensure CSS transitions start from these new values
+            void cursor.offsetHeight;
 
-          gsap.to(cursor, { x: rect.left, y: rect.top, duration: 0.1 });
-          //   cursor.style.transform = `translate(${rect.left}px,${rect.top}px)`;
-          cursor.style.setProperty("--cursorH", `${rect.height}px`);
-          hover = true;
-        }
-        if (element.dataset.cursor === "disable") {
+            cursor.classList.add("cursor-icons");
+            gsap.to(cursor, { x: rect.left, y: rect.top, duration: 0.5, ease: "power2.out" });
+            cursor.style.setProperty("--cursorH", `${rect.height}px`);
+            hover = true;
+          }
+        } else if (element.dataset.cursor === "disable") {
           cursor.classList.add("cursor-disable");
         }
       });
-      element.addEventListener("mouseout", () => {
+      element.addEventListener("mouseleave", () => {
         cursor.classList.remove("cursor-disable", "cursor-icons");
         hover = false;
       });
