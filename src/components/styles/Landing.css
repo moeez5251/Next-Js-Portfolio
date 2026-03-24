@@ -148,7 +148,14 @@
     filter: drop-shadow(0 0 40px rgba(194, 164, 255, 0.4));
   }
 }
-
+@media screen and (max-width: 350px) {
+  .landing-h2-1 {
+    font-size: 20px !important;
+    color: var(--accentColor);
+    font-weight: 700;
+    width: 100%;
+  }
+}
 .landing-section {
   width: 100%;
   max-width: var(--cMaxWidth);

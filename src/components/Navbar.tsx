@@ -23,8 +23,10 @@ const Navbar = () => {
       autoRaf:true
     });
 
-    // Start paused
-    lenis.stop();
+    // Start paused only on desktop
+    if (window.innerWidth > 1024) {
+      lenis.stop();
+    }
 
     // Handle smooth scroll animation frame
     function raf(time: number) {
